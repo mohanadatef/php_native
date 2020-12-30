@@ -10,5 +10,5 @@ if (isset($_SESSION['start']) ) {
     }
     echo '<a href="../../index.php">home</a>';
 } else {
-    header("Location: http://localhost:8080/roshetta/view/auth/login.php");
+    header("Location: http://localhost:8080/php_native/view/auth/login.php");
 }
