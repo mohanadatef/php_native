@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($login != null) {
             session_start();
             $_SESSION['start'] = 'start';
-            header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            header("Location: http://localhost:8080/php_native/");
         } else {
             echo "this email not found";
         }

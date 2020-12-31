@@ -26,7 +26,7 @@ class auth
 
     public function logout()
     {
-        session_start();
+
         unset($_SESSION['start']);
         session_destroy();
         return true;
