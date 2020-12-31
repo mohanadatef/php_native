@@ -4,7 +4,7 @@ include "../../controller/Auth.php";
 $auth =new  Auth();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
-        echo $emailErr = "Email is required";
+        echo  "Email is required";
     } else {
        echo $auth->login($_POST);
     }

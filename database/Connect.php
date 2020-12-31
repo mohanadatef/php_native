@@ -14,6 +14,10 @@ class Connect
     public function run_query($query)
     {
         $result = mysqli_query($this->connect_database_mysqli(), $query);
+        if($result == true && empty($result))
+        {
+            return true;
+        }
         return mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 }
