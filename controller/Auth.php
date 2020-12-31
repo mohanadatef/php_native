@@ -3,10 +3,15 @@ require_once "../../config/app.php";
 
 class Auth
 {
+    public function __construct()
+    {
+        $this->connect_database = new Connect();
+    }
+
     public function login($email)
     {
         $query = "SELECT * FROM users WHERE email='" . $email . "'";
-        $result = mysqli_query(connect::connect_database_mysqli(), $query);
+        $result = mysqli_query($this->connect_database->connect_database_mysqli(), $query);
         $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
         if ($user != null) {
             session_start();

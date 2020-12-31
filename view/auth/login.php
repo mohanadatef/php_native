@@ -1,5 +1,5 @@
 <?php
-include "../../database/connect.php";
+include "../../database/Connect.php";
 include "../../controller/Auth.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-
     email : <input name="email" type="text" value="<?php $email; ?>">
     <br>
     <input type="submit" name="submit" value="submit">
