@@ -8,7 +8,9 @@ if (isset($_SESSION['start']) ) {
     foreach ($about_us1 as $about_uss) {
         echo $about_uss;
     }
-    echo '<a href="../../index.php">home</a>';
+    echo '<br><br><a href="../../index.php">home</a>';
+    echo '<br><br><a href="../../view/auth/login.php">logout</a>';
+
 } else {
-    header("Location: http://localhost:8080/php_native/view/auth/login.php");
+    header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."view/auth/login.php");
 }

@@ -23,4 +23,12 @@ class auth
             return $user;
         }
     }
+
+    public function logout()
+    {
+        session_start();
+        unset($_SESSION['start']);
+        session_destroy();
+        return true;
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 include "../../database/connect.php";
 include "../../controller/auth.php";
+$auth = new auth();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($_POST["email"])) {
@@ -8,19 +9,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $email = $_POST["email"];
 
-        $auth = new auth();
 
         $login = $auth->login($email);
-        if($login != null)
-        {
+        if ($login != null) {
             session_start();
-            $_SESSION['start']='start';
-            header("Location: http://localhost:8080/php_native/");
-        }
-        else
-        {
+            $_SESSION['start'] = 'start';
+            header("Location: http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+        } else {
             echo "this email not found";
         }
+    }
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
+    session_start();
+    if (isset($_SESSION['start'])) {
+        $login = $auth->logout();
     }
 }
 ?>
