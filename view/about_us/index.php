@@ -13,7 +13,7 @@ if (isset($_SESSION['start'])) {
     <th>title</th>
     <th>description</th>
     <th>image</th>
-    
+       <th>controler</th>
     </thead>
    <tbody>';
     foreach ($about_us1 as $about_us11) {
@@ -24,6 +24,9 @@ if (isset($_SESSION['start'])) {
             <td>' . $about_us11['description'] . '
             </td>
              <td>' . $about_us11['image'] . '
+            </td>
+             <td><a href="update?id='.$about_us11['id'].'">edit</a>
+            </td>
             </tr>';
     }
     echo '</tbody>
