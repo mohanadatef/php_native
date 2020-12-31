@@ -1,17 +1,17 @@
 <?php
 include "../../database/connect.php";
-include "../../controller/auth.php";
-$auth = new auth();
+include "../../controller/Auth.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         echo $emailErr = "Email is required";
     } else {
-        echo $auth->login($_POST["email"]);
+        echo Auth::login($_POST["email"]);
     }
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
     session_start();
     if (isset($_SESSION['start'])) {
-        $login = $auth->logout();
+        $login = Auth::logout();
     }
 }
 ?>
