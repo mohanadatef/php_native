@@ -3,21 +3,10 @@ include "../../database/connect.php";
 include "../../controller/auth.php";
 $auth = new auth();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
     if (empty($_POST["email"])) {
         echo $emailErr = "Email is required";
     } else {
-        $email = $_POST["email"];
-
-
-        $login = $auth->login($email);
-        if ($login != null) {
-            session_start();
-            $_SESSION['start'] = 'start';
-            header("Location: http://localhost:8080/php_native/");
-        } else {
-            echo "this email not found";
-        }
+        echo $auth->login($_POST["email"]);
     }
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
     session_start();
