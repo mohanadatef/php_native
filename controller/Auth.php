@@ -8,9 +8,9 @@ class Auth
         $this->connect_database = new Connect();
     }
 
-    public function login($email)
+    public function login($request)
     {
-        $query = "SELECT * FROM users WHERE email='" . $email . "'";
+        $query = "SELECT * FROM users WHERE email='" . $request['email'] . "'";
         $user =  $this->connect_database->run_query($query);
         if ($user != null) {
             session_start();

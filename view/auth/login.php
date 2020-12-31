@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["email"])) {
         echo $emailErr = "Email is required";
     } else {
-       echo $auth->login($_POST["email"]);
+       echo $auth->login($_POST);
     }
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
     session_start();
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-    email : <input name="email" type="text" value="<?php $email; ?>">
+    email : <input name="email" type="email" value="<?php $email; ?>">
     <br>
     <input type="submit" name="submit" value="submit">
 </form>

@@ -7,7 +7,7 @@ class About_us
         $this->connect_database = new connect();
     }
 
-    public function index_mysqli()
+    public function index()
     {
         $query = 'SELECT * FROM about_us';
         return $this->connect_database->run_query($query);
