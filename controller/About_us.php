@@ -10,8 +10,6 @@ class About_us
     public function index_mysqli()
     {
         $query = 'SELECT * FROM about_us';
-        $result = mysqli_query($this->connect_database->connect_database_mysqli(), $query);
-        $x= mysqli_fetch_all($result, MYSQLI_ASSOC);
-        return $x;
+        return $this->connect_database->run_query($query);
     }
 }

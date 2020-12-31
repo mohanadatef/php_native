@@ -11,8 +11,7 @@ class Auth
     public function login($email)
     {
         $query = "SELECT * FROM users WHERE email='" . $email . "'";
-        $result = mysqli_query($this->connect_database->connect_database_mysqli(), $query);
-        $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        $user =  $this->connect_database->run_query($query);
         if ($user != null) {
             session_start();
             $_SESSION['start'] = 'start';

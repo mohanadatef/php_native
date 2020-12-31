@@ -10,4 +10,10 @@ class Connect
         }
         return $conn;
     }
+
+    public function run_query($query)
+    {
+        $result = mysqli_query($this->connect_database_mysqli(), $query);
+        return mysqli_fetch_all($result, MYSQLI_ASSOC);
+    }
 }
