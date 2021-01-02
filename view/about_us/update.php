@@ -20,21 +20,18 @@ if (isset($_SESSION['start'])) {
                 echo '<br>' . $e;
             }
         } else {
-           $about_us->update($_POST,$_GET['id']);
-           header("Location: " . $GLOBALS['baseurl'] . "index");
+            $about_us->update($_POST, $_GET['id']);
+            header("Location: " . $GLOBALS['baseurl'] . "index");
         }
-    }
-    elseif ($_SERVER["REQUEST_METHOD"] == "GET")
-    {
+    } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
         $about_us1 = $about_us->edit($_GET['id']);
-        foreach ($about_us1 as $about_us11)
-        {
-                $about_us1 = $about_us11;
+        foreach ($about_us1 as $about_us11) {
+            $about_us1 = $about_us11;
         }
     }
     ?>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-        title : <input name="title" type="text" value="<?php  print_r($about_us1['title']); ?>">
+        title : <input name="title" type="text" value="<?php print_r($about_us1['title']); ?>">
         <br>
         description : <input name="description" type="text" value="<?php print_r($about_us1['description']); ?>">
         <br>
@@ -42,9 +39,9 @@ if (isset($_SESSION['start'])) {
         <br>
         <input type="submit" name="submit" value="submit">
     </form>
+    <br><br><a href="../../index">home</a>
+    <br><br><a href="../../view/auth/login">logout</a>
     <?php
-    echo '<br><br><a href="../../index">home</a>';
-    echo '<br><br><a href="../../view/auth/login">logout</a>';
 } else {
     header("Location: " . $baseurl . "view/auth/login");
 }

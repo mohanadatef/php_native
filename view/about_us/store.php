@@ -26,17 +26,17 @@ if (isset($_SESSION['start'])) {
     }
     ?>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-        title : <input name="title" type="text" value="<?php $title; ?>">
+        title : <input name="title" type="text">
         <br>
-        description : <input name="description" type="text" value="<?php $description; ?>">
+        description : <input name="description" type="text">
         <br>
-        image : <input name="image" type="text" value="<?php $image; ?>">
+        image : <input name="image" type="text">
         <br>
         <input type="submit" name="submit" value="submit">
     </form>
+   <br><br><a href="../../index">home</a>
+   <br><br><a href="../../view/auth/login">logout</a>
     <?php
-    echo '<br><br><a href="../../index">home</a>';
-    echo '<br><br><a href="../../view/auth/login">logout</a>';
 } else {
     header("Location: " . $baseurl . "view/auth/login");
 }

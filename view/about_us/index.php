@@ -8,7 +8,6 @@ if (isset($_SESSION['start'])) {
     echo '
     <table>
     <thead>
-    
     <th>id</th>
     <th>title</th>
     <th>description</th>
@@ -25,15 +24,15 @@ if (isset($_SESSION['start'])) {
             </td>
              <td>' . $about_us11['image'] . '
             </td>
-             <td><a href="update?id='.$about_us11['id'].'">edit</a>
+             <td><a href="update?id=' . $about_us11['id'] . '">edit</a>
             </td>
             </tr>';
     }
     echo '</tbody>
-           </table>';
-    echo '<br><br><a href="../../view/about_us/store">create</a>';
-    echo '<br><br><a href="../../index">home</a>';
-    echo '<br><br><a href="../../view/auth/login">logout</a>';
+           </table>
+    <br><br><a href="../../view/about_us/store">create</a>
+    <br><br><a href="../../index">home</a>
+   <br><br><a href="../../view/auth/login">logout</a>';
 } else {
     header("Location: " . $baseurl . "view/auth/login");
 }
