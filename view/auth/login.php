@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET") {
     session_start();
     if (isset($_SESSION['start'])) {
-        $auth->logout();
+        header("Location: " . $baseurl );
     }
 }
 ?>

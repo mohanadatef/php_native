@@ -25,6 +25,6 @@ class Auth
     {
         unset($_SESSION['start']);
         session_destroy();
-        return true;
+        header("Location: " . $GLOBALS['baseurl'] . "view/auth/login");
     }
 }

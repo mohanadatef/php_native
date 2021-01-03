@@ -35,7 +35,7 @@ if (isset($_SESSION['start'])) {
         <input type="submit" name="submit" value="submit">
     </form>
    <br><br><a href="../../index">home</a>
-   <br><br><a href="../../view/auth/login">logout</a>
+   <br><br><a href="../../view/auth/logout">logout</a>
     <?php
 } else {
     header("Location: " . $baseurl . "view/auth/login");

@@ -32,7 +32,7 @@ if (isset($_SESSION['start'])) {
            </table>
     <br><br><a href="../../view/about_us/store">create</a>
     <br><br><a href="../../index">home</a>
-   <br><br><a href="../../view/auth/login">logout</a>';
+   <br><br><a href="../../view/auth/logout">logout</a>';
 } else {
     header("Location: " . $baseurl . "view/auth/login");
 }
